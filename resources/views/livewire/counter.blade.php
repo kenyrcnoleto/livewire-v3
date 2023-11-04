@@ -2,7 +2,7 @@
     Hello from Livewire v3
     <br>
 
-    <x-text-input wire:model.blur="name" />
+    <x-text-input wire:model.live="name" />
     <x-primary-button wire:click="refresh">
         Refresh
     </x-primary-button>

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Locked;
 
 class Counter extends Component
 {
@@ -22,6 +23,9 @@ class Counter extends Component
     //1-propriedade declarada, 2-o que está na view, 3-o que está no mount
 
     //A propriedade pode ser maninipulada via livewire ou via alpine => @click="$wire.set('name', 'Joazinho') este seta no backend tb
+
+    //FInalidade de travar e garantir a integridade dos dados do id em específico.
+    #[Locked]
 
     public int $counter = 5;
 

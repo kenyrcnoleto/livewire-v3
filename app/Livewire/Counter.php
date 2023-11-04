@@ -50,4 +50,9 @@ class Counter extends Component
     {
         $this->counter ++;
     }
+
+    public function refresh()
+    {
+        
+    }
 }

@@ -16,12 +16,28 @@ class Counter extends Component
 
     public int $counter = 0;
 
-   
+    public string $name = '';
+
+    public string $lastName = '';
 
     public function mount()
     {
         $this->counter = 100;
 
+        
+        $this->fill([
+            'name' => 'Rafael',
+            'lastName' => 'Castro'
+        ]);
+        
+        //Isso tb pode ser feito para db mesma finalidade - preencher as propriedades que existem naquele objeto
+
+        /*$user = new User();
+
+        $user->fill([
+            'name' => 'Rafael',
+            'lastName' => 'Castro'
+        ]); */
 
     }
 

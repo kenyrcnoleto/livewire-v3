@@ -2,10 +2,17 @@
     Hello from Livewire v3
     <br>
 
-    <x-text-input wire:model.blur="counter" />
+    <x-text-input wire:model.blur="name" />
     <x-primary-button wire:click="refresh">
         Refresh
     </x-primary-button>
+    <br><br>
+    
+    <div x-data="">
+        <span x-text="$wire.name"></span>
+
+        <x-secondary-button @click="$wire.name='Joazinho'">teste</x-secondary-button>
+    </div>
     <br><br>
     Name:: {{ $name }} {{ $lastName }}
     <br>

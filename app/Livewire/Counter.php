@@ -7,6 +7,13 @@ use Livewire\Component;
 class Counter extends Component
 {
 
+    //Em todo nova aplicação do livewire 3 remover o import import Alpine from 'alpinejs';
+
+    // window.Alpine = Alpine;
+
+    // Alpine.start();
+    // dentro do arquivo app.js
+
     // Se é uma propriedade pública tem possibilidade de manipular dos dois lados - pode ser acessar na viw :counter="10"
 
     //Na view sempre importante colocar : para identificar como um código php, caso não coloque o : irá interpretar como uma string
@@ -14,9 +21,11 @@ class Counter extends Component
     //mount inicializa os valores das propriedades 
     //1-propriedade declarada, 2-o que está na view, 3-o que está no mount
 
-    public int $counter = 0;
+    //A propriedade pode ser maninipulada via livewire ou via alpine => @click="$wire.set('name', 'Joazinho') este seta no backend tb
 
-    public string $name = '';
+    public int $counter = 5;
+
+    public string $name = 'Fera';
 
     public string $lastName = '';
 
@@ -51,8 +60,11 @@ class Counter extends Component
         $this->counter ++;
     }
 
+    // wire:model.live atualiza em tempo real
+    //wire:model.blur atualiza quando clica fora
+    //
     public function refresh()
     {
-        
+        $this->reset('name', 'lastName');
     }
 }

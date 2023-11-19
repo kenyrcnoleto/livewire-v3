@@ -16,6 +16,8 @@
     <br><br>
     Name:: {{ $name }} {{ $lastName }}
     <br>
+    Name:: {{ $this->fullName }}
+    <br><br>
     <div> {{ $counter }} </div>
 
     <x-primary-button wire:click="count">

@@ -31,6 +31,15 @@
         add 10 num 2
     </x-primary-button>
 
+    <x-primary-button type="button" @click="$wire.calculate()">
+        Calculando pelo APline
+    </x-primary-button>
+
+    <x-primary-button type="button" wire:click="toLogando()">
+        Só toLogando
+        <span wire:loading wire:target="toLogando">...</span>
+    </x-primary-button>
+
     <br>
     <span wire:loading  wire:target="calculate" class="text-blue-500 font-bold italic">Calculando...aguenta aí!</span>
     <br>

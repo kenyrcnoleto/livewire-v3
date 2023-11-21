@@ -10,10 +10,14 @@ class EditUser extends Component
 {
     public User $user;
 
+    //public ?string $name = null;
+
     public UserForm $form;
 
     public function mount()
     {
+        //$this->name = $this->user->name;
+
         $this->form->setUser($this->user);
         
     }

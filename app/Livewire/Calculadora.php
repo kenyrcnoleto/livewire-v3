@@ -64,13 +64,15 @@ class Calculadora extends Component
         $this->$prop += 10;
     }
 
-    //Precisa garantir da segurança da ação no momento de modificação no banco.
+    //Precisa garantir da segurança da ação no momento de modificação no banco usando AuthService Provider.
     public function delete($userId)
     {
         $this->authorize('delete-user', $userId);
     }
 
-    #[Renderless] 
+    //Dessa forma não sai atualizando toda a página
+    #[Renderless]  
+
     public function toLogando()
     {
         $this->num2 = 1000;

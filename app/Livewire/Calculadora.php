@@ -58,7 +58,14 @@ class Calculadora extends Component
 
     public function add10($prop)
     {
+
+        $this->authorize('add10', $prop);
         $this->$prop += 10;
+    }
+
+    public function delete($userId)
+    {
+        $this->authorize('delete-user', $userId);
     }
 
     

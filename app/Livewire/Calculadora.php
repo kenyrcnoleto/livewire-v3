@@ -36,6 +36,7 @@ class Calculadora extends Component
         //função eval para calcualar 
 
         $this->result = eval('return '. $tmp);
+        sleep(2);
 
         Log::info('calculou:' . $this->result);
     }

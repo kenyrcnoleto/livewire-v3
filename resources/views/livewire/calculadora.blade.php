@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.throttle.1000ms="calculate">
+    <form wire:submit.throttle="calculate">
     
     <x-text-input
         placeholder="primeiro numero" 
@@ -16,8 +16,15 @@
 
     <x-text-input placeholder="segundo numero" wire:model="num2" />
 
-    <x-primary-button type="submit" > Calcular </x-primary-button>
+    <x-primary-button type="submit" > 
+        <span wire:loading.class="hidden" wire:target="calculate">Calcular</span>    
 
+        <span wire:loading wire:target="calculate">Calculando...</span>
+
+    </x-primary-button>
+
+    <br>
+    <span wire:loading  wire:target="calculate" class="text-blue-500 font-bold italic">Calculando...aguenta aí!</span>
     <br>
 
     Num1:: {{ $num1 }} 

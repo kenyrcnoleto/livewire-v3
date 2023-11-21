@@ -56,5 +56,10 @@ class Calculadora extends Component
 
     //prevent previne que a ação aconteça - no v3 submit ja tem prevent por padrão
 
+    public function add10($prop)
+    {
+        $this->$prop += 10;
+    }
+
     
 }

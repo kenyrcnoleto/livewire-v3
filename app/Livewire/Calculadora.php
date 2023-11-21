@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Stringable;
+use Livewire\Attributes\Renderless;
 
 class Calculadora extends Component
 {
@@ -56,5 +57,23 @@ class Calculadora extends Component
 
     //prevent previne que a ação aconteça - no v3 submit ja tem prevent por padrão
 
-    
+    public function add10($prop)
+    {
+
+        $this->authorize('add10', $prop);
+        $this->$prop += 10;
+    }
+
+    //Precisa garantir da segurança da ação no momento de modificação no banco.
+    public function delete($userId)
+    {
+        $this->authorize('delete-user', $userId);
+    }
+
+    #[Renderless] 
+    public function toLogando()
+    {
+        $this->num2 = 1000;
+        Log::info('logando...'. now()->timestamp);
+    }
 }

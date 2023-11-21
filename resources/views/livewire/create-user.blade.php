@@ -2,9 +2,9 @@
 
 <div>
 
-    <x-text-input placeholder="User Name" wire:model.live="name" />
+    <x-text-input placeholder="User Name" wire:model.live="form.name" />
 
-    @error('name')
+    @error('form.name')
 
     <div class="text-sm italic font-semibold text-red-400"> {{ $message }} </div>
 
@@ -12,20 +12,9 @@
 </div>
 
 <div>
-    <x-text-input placeholder="Email" wire:model.blur="email" />
+    <x-text-input placeholder="Email" wire:model.blur="form.email" />
 
-    @error('email')
-
-    <div class="text-sm italic font-semibold text-red-400"> {{ $message }} </div>
-
-    @enderror
-
-</div>
-
-<div>
-    <x-text-input placeholder="Password" wire:model.blur="password" type="password" />
-
-    @error('password')
+    @error('form.email')
 
     <div class="text-sm italic font-semibold text-red-400"> {{ $message }} </div>
 
@@ -34,7 +23,18 @@
 </div>
 
 <div>
-    <x-text-input placeholder="Password Confirmation" wire:model.blur="password_confirmation" type="password" />
+    <x-text-input placeholder="Password" wire:model.blur="form.password" type="password" />
+
+    @error('form.password')
+
+    <div class="text-sm italic font-semibold text-red-400"> {{ $message }} </div>
+
+    @enderror
+
+</div>
+
+<div>
+    <x-text-input placeholder="Password Confirmation" wire:model.blur="form.password_confirmation" type="password" />
 
   
 

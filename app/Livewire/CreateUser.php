@@ -6,23 +6,15 @@ use Livewire\Component;
 use Livewire\Attributes\Rule;
 //use Illuminate\Validation\Rule;
 use App\Models\User;
+use App\Livewire\Forms\UserForm;
 
-class UserForm extends Component
+class CreateUser extends Component
 {
     //Esta amarrado para a propriedade logo abaixo
     //Só o fato de estar setado wire.model.live ou .blur o  \Attributes\Rule já faz a validação em tempo real
     
 
-    #[Rule(['required', 'string', 'max:255', 'min:2'])]
-    public string $name;
-
-    #[Rule(['required', 'email', 'max:255', 'min:2'])]
-    public string $email;
-
-    #[Rule(['required', 'string', 'max:255', 'min:2', 'confirmed'])]
-    public string $password;
-    
-    public string $password_confirmation;
+   
     
     //Rule::unique('')->ignore(1) não consegue usar dentro do atributo
 
@@ -43,20 +35,18 @@ class UserForm extends Component
     }
      */
 
+     public UserForm $form;
+
     public function render()
     {
-        return view('livewire.user-form');
+        return view('livewire.create-user');
     }
 
     public function submit()
     {
 
-        $this->validate();
+        // $this->validate();
 
-        User::create([
-            'name' => $this->name,
-            'email' => $this->email,
-            'password' => $this->password,
-        ]);
+        $this->form->save();
     }
 }

@@ -3,28 +3,30 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-//use Livewire\Attributes\Rule;
-use Illuminate\Validation\Rule;
+use Livewire\Attributes\Rule;
+//use Illuminate\Validation\Rule;
 use App\Models\User;
 
 class UserForm extends Component
 {
     //Esta amarrado para a propriedade logo abaixo
+    //Só o fato de estar setado wire.model.live ou .blur o  \Attributes\Rule já faz a validação em tempo real
+    
 
-    // #[Rule(['required', 'string', 'max:255', 'min:2'])]
+    #[Rule(['required', 'string', 'max:255', 'min:2'])]
     public string $name;
 
-    // #[Rule(['required', 'email', 'max:255', 'min:2'])]
+    #[Rule(['required', 'email', 'max:255', 'min:2'])]
     public string $email;
 
-    // #[Rule(['required', 'string', 'max:255', 'min:2', 'confirmed'])]
+    #[Rule(['required', 'string', 'max:255', 'min:2', 'confirmed'])]
     public string $password;
     
     public string $password_confirmation;
     
     //Rule::unique('')->ignore(1) não consegue usar dentro do atributo
 
-    public function rules()
+   /* public function rules()
     {
         return [
             'name' => ['required', 'string', 'max:255', 'min:2'],
@@ -33,6 +35,13 @@ class UserForm extends Component
         ];
     }
 
+    public function updated($attr, $value)
+    {
+        //dd($attr, $value);
+
+        $this->validateOnly($attr);
+    }
+     */
 
     public function render()
     {

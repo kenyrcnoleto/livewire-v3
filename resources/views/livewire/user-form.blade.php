@@ -2,7 +2,7 @@
 
 <div>
 
-    <x-text-input placeholder="User Name" wire:model="name" />
+    <x-text-input placeholder="User Name" wire:model.live="name" />
 
     @error('name')
 
@@ -12,7 +12,7 @@
 </div>
 
 <div>
-    <x-text-input placeholder="Email" wire:model="email" />
+    <x-text-input placeholder="Email" wire:model.blur="email" />
 
     @error('email')
 
@@ -23,7 +23,7 @@
 </div>
 
 <div>
-    <x-text-input placeholder="Password" wire:model="password" type="password" />
+    <x-text-input placeholder="Password" wire:model.blur="password" type="password" />
 
     @error('password')
 
@@ -34,7 +34,7 @@
 </div>
 
 <div>
-    <x-text-input placeholder="Password Confirmation" wire:model="password_confirmation" type="password" />
+    <x-text-input placeholder="Password Confirmation" wire:model.blur="password_confirmation" type="password" />
 
   
 

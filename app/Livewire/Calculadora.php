@@ -4,10 +4,12 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Stringable;
 
 class Calculadora extends Component
 {
-    public float $num1 = 0;
+    //Simbolo ? para aceitar vazio
+    public ?string $num1 = null;
 
     public float $num2 = 0;
 
@@ -40,4 +42,18 @@ class Calculadora extends Component
 
     //Pode somente tipar o botão como submit ao invês de usar o wire:click
     //<x-primary-button wire:click="calculate" > Calcular </x-primary-button>
+
+    public function naoQueroY()
+    {
+        $this->num1 = str($this->num1)->replace('y', 'JERERE', true);
+        /*dump([
+            $this->num1,
+            str($this->num1)->replace('y', 'JERERE', true)
+        ]); */
+        sleep(2);
+    }
+
+    //prevent previne que a ação aconteça - no v3 submit ja tem prevent por padrão
+
+    
 }

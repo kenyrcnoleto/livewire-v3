@@ -7,8 +7,9 @@
         Refresh
     </x-primary-button>
     <br><br>
-    
+
     <div x-data="">
+        <span>testtingg</span>
         <span x-text="$wire.name"></span>
 
         <x-secondary-button @click="$wire.name='Joazinho'">teste</x-secondary-button>

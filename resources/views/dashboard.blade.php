@@ -10,6 +10,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
+                    <livewire:event-example />
+                    <livewire:listener-example />
                     <livewire:calculadora />
                 </div>
             </div>
@@ -20,11 +22,11 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <livewire:create-user />
-                    
+
                     <livewire:user-resume />
 
                     <livewire:edit-user :user="\App\Models\User::find(2)" />
-                    
+
                 </div>
             </div>
 
@@ -35,7 +37,7 @@
 
                     <livewire:user-list />
 
-                  
+
                 </div>
             </div>
 

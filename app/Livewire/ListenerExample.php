@@ -23,8 +23,9 @@ class ListenerExample extends Component
 
     #[On('event-example')]
 
-    public function handleEvent() : void
+    public function handleEvent($params) : void
     {
+        dd($params);
         dd('Event received in ListenerExample component');
         // Handle the event (e.g., log, update state, etc.)
     }

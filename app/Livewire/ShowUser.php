@@ -15,7 +15,7 @@ class ShowUser extends Component
     #[On('show-user.{user.id}')]
     public function showUser() :void
     {
-        $this->show = true;
+        $this->show = !$this->show;
     }
     public function render()
     {

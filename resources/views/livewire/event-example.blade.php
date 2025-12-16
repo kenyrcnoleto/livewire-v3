@@ -3,9 +3,13 @@
     {{-- Be like water. --}}
 
 
-    <ul class="my list-decimal gap-2" >
+    <ul class="my list-decimal gap-2" x-data>
         @foreach ($this->users as $user)
-            <li class="hover:under cursor-pointer" wire:click="dispatchEventForUser( {{ $user->id }} )" >
+            {{--*disparando evento atraves do metodo criado <li class="hover:under cursor-pointer" wire:click="dispatchEventForUser( {{ $user->id }} )" >
+                 {{    $user->name }}
+             </li> --}}
+
+             <li class="hover:under cursor-pointer" @click="$wire.dispatch('show-user.{{ $user->id }}')" >
                  {{    $user->name }}
              </li>
         @endforeach

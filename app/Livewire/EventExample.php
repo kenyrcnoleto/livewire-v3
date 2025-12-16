@@ -11,14 +11,15 @@ class EventExample extends Component
 {
     public function handleEvent() :void
     {
-        $this->dispatch('event-example', params: ['id' => 123]);
+        //$this->dispatch('event-example', title: 'Hello World');
+         $this->dispatch('event-example', params: ['id' => 123, 'title' => 'Hello World']);
         // Handle the event (e.g., log, update state, etc.)
     }
 
-    public function dispatchEventForUser(int $userId) : void
-    {
-        $this->dispatch("show-user.{$userId}");
-    }
+    // public function dispatchEventForUser(int $userId) : void
+    // {
+    //     $this->dispatch("show-user.{$userId}");
+    // }
 
     #[Computed]
     public function users() : Collection

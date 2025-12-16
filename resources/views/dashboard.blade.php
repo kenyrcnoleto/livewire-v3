@@ -8,6 +8,13 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-10">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                  <div class="p-6 text-pink-900 dark:text-gray-100  font-bold" x-data="{show: false}">
+                    Via alpine:
+
+                    <div x-on:event-example.window="show = !show" x-show="show" class="p-4 bg-yellow-200 rounded-lg">
+                        Hi I'm listening to event-example event.
+                    </div>
+                </div>
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <livewire:event-example />

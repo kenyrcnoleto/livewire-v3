@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -25,10 +26,12 @@ class ListenerExample extends Component
 
     public function handleEvent($params) : void
     {
-        dd($params);
-        dd('Event received in ListenerExample component');
+        Log::info('ListernerExample' , $params);
+        // dd('Event received in ListenerExample component');
         // Handle the event (e.g., log, update state, etc.)
     }
+
+
 
     public function render()
     {

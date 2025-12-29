@@ -17,6 +17,8 @@
                 </div>
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
+                    <livewire:lifecycle id="anything"/>
+
                     <livewire:event-example />
                     <livewire:listener-example />
                     <livewire:calculadora />

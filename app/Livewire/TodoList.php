@@ -15,6 +15,14 @@ class TodoList extends Component
         return \App\Models\Todo::all();
     }
 
+    // public function toggleComplete($id)
+    // {
+    //     $todo = \App\Models\Todo::findOrFail($id);
+
+    //     $todo->is_completed = !$todo->is_completed;
+    //     $todo->save();
+    // }
+
     public function render()
     {
         return view('livewire.todo-list');

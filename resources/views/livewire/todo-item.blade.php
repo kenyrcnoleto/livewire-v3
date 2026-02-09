@@ -7,5 +7,12 @@
         <span class="ml-2  {{ $todo->is_completed ? 'line-through text-gray-500' : '' }}">
             {{ $todo->title }}
         </span>
+
+        <button
+            class="ml-auto bg-red-500 text-white px-2 py-1 rounded text-sm font-medium hover:bg-red-600"
+            wire:click="delete()"
+        >
+            Delete
+        </button>
     </li>
 </div>

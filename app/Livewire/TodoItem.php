@@ -16,6 +16,12 @@ class TodoItem extends Component
         $this->todo->save();
     }
 
+    public function delete()
+    {
+        $this->todo->delete();
+        $this->dispatch('todos-refresh');
+    }
+
     public function render()
     {
         return view('livewire.todo-item');

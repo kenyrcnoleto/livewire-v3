@@ -7,8 +7,11 @@ use Livewire\Component;
 class TodoList extends Component
 {
 
+    public string $newTodo = '';
+
     //nesting - aninhamento de componentes
 
+    #[\Livewire\Attributes\On('todos-refresh')]
     #[\Livewire\Attributes\Computed]
     public function todos()
     {
@@ -21,6 +24,19 @@ class TodoList extends Component
 
     //     $todo->is_completed = !$todo->is_completed;
     //     $todo->save();
+    // }
+    // public function addTodo()
+    // {
+    //     // dd($this->newTodo);
+    //     $this->validate([
+    //         'newTodo' => 'required|string|max:255',
+    //     ]);
+
+    //     \App\Models\Todo::create([
+    //         'title' => $this->newTodo,
+    //     ]);
+
+    //     $this->newTodo = '';
     // }
 
     public function render()

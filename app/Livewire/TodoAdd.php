@@ -19,7 +19,8 @@ class TodoAdd extends Component
             'title' => $this->newTodo,
         ]);
 
-        $this->newTodo = '';
+        //$this->newTodo = '';
+        $this->reset('newTodo');
         $this->dispatch('todos-refresh');
     }
     public function render()

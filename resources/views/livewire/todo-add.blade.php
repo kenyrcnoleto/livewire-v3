@@ -8,6 +8,9 @@
             wire:model="newTodo"
             wire:keydown.enter="addTodo"
         />
+        @error('newTodo')
+            <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+        @enderror
         <button
             class="bg-blue-500 text-black px-4 py-2 rounded text-sm font-medium hover:bg-blue-600"
             wire:click="addTodo"
